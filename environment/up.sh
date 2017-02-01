@@ -13,7 +13,7 @@ sudo cp /var/lib/origin/openshift.local.config/master/admin.kubeconfig ~/.kube/c
 sudo chown "$USER:$USER" ~/.kube/config
 
 # Install Dynatrace OneAgent
-DT_CLUSTER="${DT_CLUSTER:-live.dynatrace.com}"
+DT_CLUSTER="${DT_CLUSTER:-sprint.dynatracelabs.com}"
 if [ -n "$DT_TENANT_ID" ] && [ -n "$DT_TENANT_TOKEN" ]; then
   wget -q -O Dynatrace-OneAgent.sh "https://${DT_TENANT_ID}.${DT_CLUSTER}/installer/agent/unix/latest/${DT_TENANT_TOKEN}"
   sudo /bin/sh Dynatrace-OneAgent.sh APP_LOG_CONTENT_ACCESS=1
